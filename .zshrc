@@ -111,10 +111,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ssh-gen="ssh-keygen -t ed25519 -C "hugo.protsch@gmail.com""
-alias ssh-a=`ssh-agent -s`
-export MYSSH='/home/hugop/.ssh/id_ed25519'
-export MYSSHPUB='/home/hugop/.ssh/id_ed25519.pub'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
