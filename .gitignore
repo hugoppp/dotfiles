@@ -10,3 +10,4 @@
 #blacklist
 .local/
 .oh-my-zsh/
+/.config/nvim/plugin/packer_compiled.lua
