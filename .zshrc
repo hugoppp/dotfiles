@@ -133,3 +133,4 @@ zle -N zle-keymap-select
 
 
 unsetopt LIST_BEEP
+export POSTINSTALL_RUN
