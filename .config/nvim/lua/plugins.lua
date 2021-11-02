@@ -1,9 +1,9 @@
-require('packer').startup(function()
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- colorschemes
   use 'morhetz/gruvbox'
-  use 'joshdick/onedark.vim' 
+  use 'joshdick/onedark.vim'
 
   -- files
   use {
@@ -26,8 +26,13 @@ require('packer').startup(function()
   -- completion, highlighting
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
+  use 'williamboman/nvim-lsp-installer'
 
   use 'wakatime/vim-wakatime'
+
+  -- integeration
+  use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
 
   -- looks
   use 'vim-airline/vim-airline'
@@ -41,6 +46,8 @@ end)
   vim.g["airline#extensions#tabline#formatter"] = 'unique_tail_improved'
   -- vim.g["airline_statusline_ontop"] = 1
   vim.g["airline_powerline_fonts"] = 1
+
+
 require'nvim-tree'.setup()
 
 require'nvim-tree'.setup {

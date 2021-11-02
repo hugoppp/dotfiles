@@ -19,6 +19,9 @@ sudo apt-get install \
   ripgrep \
   fzf \
   zsh \
+  unzip\
+  gzip\
+  nodejs\
   -y
 
 if [[ -n $NAME ]]
@@ -41,15 +44,17 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 #install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 chsh -s $(which zsh)
-# zsh plugins 
-# zsh-vi-mode
-git clone https://github.com/jeffreytse/zsh-vi-mode \
-  $ZSH/plugins/zsh-vi-mode
-  # powerlevel10k
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-  export POSTINSTALL_RUN 
-  echo export POSTINSTALL_RUN >> ~/.zshrc
+# -- zsh plugins --
+# zsh-vi-mode
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/plugins/zsh-vi-mode
+# powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# zsh autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+export POSTINSTALL_RUN 
+echo export POSTINSTALL_RUN >> ~/.zshrc
 
 # dotnet
 #wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb

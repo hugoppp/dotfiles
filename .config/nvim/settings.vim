@@ -57,6 +57,8 @@ set noswapfile
 "complete
 "set complete+=kspell
 set completeopt=menuone,longest
+set wildmenu
+set wildmode=longest:full,full
 "set spell spelllang=en_us,de
 "shor
 "et shortmess+=c
@@ -65,3 +67,5 @@ set completeopt=menuone,longest
 " set winwidth=80
 " set winminheight=1
 " set winminwidth=5
+"
+

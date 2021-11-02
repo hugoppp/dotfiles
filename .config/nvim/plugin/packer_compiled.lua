@@ -71,72 +71,109 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   fzf = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/fzf"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/fzf.vim"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   gruvbox = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.vim"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/onedark.vim"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/onedark.vim",
+    url = "https://github.com/joshdick/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["vim-airline"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-airline"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-airline",
+    url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-airline-themes"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-airline-themes"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
+    url = "https://github.com/vim-airline/vim-airline-themes"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-highlightedyank"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-highlightedyank"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-highlightedyank",
+    url = "https://github.com/machakann/vim-highlightedyank"
   },
   ["vim-repeat"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-repeat"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-startify"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-startify"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-wakatime"] = {
     loaded = true,
-    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-wakatime"
+    path = "/home/hugop/.local/share/nvim/site/pack/packer/start/vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
   }
 }
 
