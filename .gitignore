@@ -1,13 +1,22 @@
-*
+# Blacklist files/folders in same directory as the .gitignore file
+/*
 
-# whitlist
-!*/
+# whitlist files
 !.gitignore
-!/.config/**
 !.zshrc
 !.p10k.zsh
 
+!/.config
+/.config/**
+
+!/.config/nvim
+!/.config/nvim/**
+.config/nvim/plugin/
+
+
+
+
 #blacklist
-.local/
-.oh-my-zsh/
-/.config/nvim/plugin/packer_compiled.lua
+# .local/
+# .oh-my-zsh/
+# .config/nvim/plugin/packer_compiled.lua

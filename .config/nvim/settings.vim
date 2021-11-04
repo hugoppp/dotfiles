@@ -8,6 +8,9 @@ set ttimeout
 
 set termguicolors
 
+set splitbelow
+set splitright
+
 "allow switching lines by going left/right
 "set whichwrap+=<,>,h,l,[,]
 

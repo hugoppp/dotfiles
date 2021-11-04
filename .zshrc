@@ -78,7 +78,7 @@ ENABLE_CORRECTION="false"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent copydir copyfile zsh-autosuggestions web-search)
-plugins+=(zsh-vi-mode)
+#plugins+=(zsh-vi-mode)
 
 ZVM_VI_EDITOR=nvim
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
@@ -111,6 +111,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias vim=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -119,17 +121,23 @@ fi
 # bindkey -v
 
 # display vim mode
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 
 unsetopt LIST_BEEP
 export POSTINSTALL_RUN
 
 setopt nocorrectall
-setopt correct
+setopt nocorrect
+
+
+# alias G='(){ nvim -c ":G$1 | bd1" ;}'
+alias G='nvim -c ":Git | bd1"'
+alias Gl="nvim -c \"exec 'Flog' | bd1\""
+

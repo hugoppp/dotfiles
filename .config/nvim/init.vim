@@ -1,18 +1,26 @@
 let mapleader=" "
 
+
 let $NVIMHOME = $HOME . '/.config/nvim'
 
-"plugins
-source $NVIMHOME/nvim_tree.vim
+"snippets
+source $NVIMHOME/fzf-buffer-delete.vim
+
+luafile $NVIMHOME/lua/toggleterm-config.lua
+luafile $NVIMHOME/lua/nvim-tree-config.lua
+luafile $NVIMHOME/lua/autosave-config.lua
+luafile $NVIMHOME/lua/lsp-config.lua
+luafile $NVIMHOME/lua/treesitter-config.lua
 
 luafile $NVIMHOME/lua/plugins.lua
-luafile $NVIMHOME/lua/lsp.lua
 
 source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
 source $NVIMHOME/fzf.vim
 
+
+command! G vert Git
 
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
@@ -42,3 +50,4 @@ nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 
 nnoremap <silent> gd :Lspsaga preview_definition<CR>
+

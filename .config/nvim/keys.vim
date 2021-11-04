@@ -1,6 +1,8 @@
 command! BufOnly silent! execute "%bd|e#|bd#" 
 nnoremap <silent><leadebo :BufOnly<CR>
 
+nnoremap ZZ :xa<CR>
+
 "window
 nnoremap <C-H>                <C-W><C-H>
 nnoremap <C-J>                <C-W><C-J>

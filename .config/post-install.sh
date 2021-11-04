@@ -13,16 +13,16 @@ read -rp  "Email: " EMAIL
 read -rp  "Name: " NAME
 
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install \
-  curl wget git \
-  #  neovim \
-  ripgrep \
-  fzf \
-  zsh \
+sudo apt-get install\
+  curl wget git\
+  ripgrep\
+  fzf\
+  zsh\
   unzip\
   gzip\
   nodejs\
-  -y
+  build-essential\
+  -yqq
 
 if [[ -n $NAME ]]
 then
@@ -31,17 +31,23 @@ then
   git config --global user.email "$EMAIL"
 fi
 
+
+# git config
+# git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+
+# change remote of this repo to ssh
 cd ~
 git remote set-url origin git@github.com:hugoppp/dotfiles.git
 
-#install neovim 0.5
+# install neovim latest stable
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-install neovim -y
-#neovim packer
+
+# install neovim packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-#install oh-my-zsh
+# install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 chsh -s $(which zsh)
 
@@ -65,3 +71,5 @@ echo export POSTINSTALL_RUN >> ~/.zshrc
 #  sudo apt-get install -y apt-transport-https && \
 #  sudo apt-get update && \
 #  sudo apt-get install -y dotnet-sdk-5.0
+
+
