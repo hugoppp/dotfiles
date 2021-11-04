@@ -11,13 +11,13 @@ luafile $NVIMHOME/lua/nvim-tree-config.lua
 luafile $NVIMHOME/lua/autosave-config.lua
 luafile $NVIMHOME/lua/lsp-config.lua
 luafile $NVIMHOME/lua/treesitter-config.lua
-
+luafile $NVIMHOME/lua/lualine-config.lua
 luafile $NVIMHOME/lua/plugins.lua
 
 source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
-source $NVIMHOME/fzf.vim
+source $NVIMHOME/telescope-config.vim
 
 
 command! G vert Git

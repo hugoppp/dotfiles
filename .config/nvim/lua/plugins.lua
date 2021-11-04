@@ -12,11 +12,9 @@ require('packer').startup(function(use)
     config = function() require'nvim-tree'.setup {} end
   }
 
-  use 'junegunn/fzf.vim'
-
   use {
-    'junegunn/fzf',
-    run = function() vim.fn['fzf#install()'](0)  end
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- editor basics
@@ -27,6 +25,14 @@ require('packer').startup(function(use)
 
   use {'machakann/vim-highlightedyank'}
   vim.g["highlightedyank_highlight_duration"] = 300
+
+  -- window
+  -- use {
+  --   "luukvbaal/stabilize.nvim",
+  --   config = function() require("stabilize").setup() end
+  -- }
+
+  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
   -- completion, highlighting
   use 'neovim/nvim-lspconfig'
@@ -44,14 +50,11 @@ require('packer').startup(function(use)
   use {"akinsho/toggleterm.nvim"}
 
   -- looks
-  use {'vim-airline/vim-airline'}
-  use 'vim-airline/vim-airline-themes'
-  vim.g["airline#extensions#tabline#formatter"] = 'unique_tail_improved'
-  vim.g["airline_powerline_fonts"] = 1
-  vim.g["airline#extensions#tabline#enabled"] = 1
-  vim.g["airline#extensions#tabline#left_alt_sep"] = '|'
-  vim.g["airline#extensions#tabline#left_sep"] = ' '
-
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = function() require'lualine'.setup {} end
+  }
 
   use 'mhinz/vim-startify'
   vim.g["startify_custom_header"]= "startify#center(startify#fortune#cowsay())"
@@ -60,6 +63,11 @@ require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
+  -- browser
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+}
 
   ---- language specif ----
   -- markdown preview
