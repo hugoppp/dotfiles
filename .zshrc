@@ -141,3 +141,5 @@ setopt nocorrect
 alias G='nvim -c ":Git | bd1"'
 alias Gl="nvim -c \"exec 'Flog' | bd1\""
 
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'

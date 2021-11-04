@@ -72,3 +72,5 @@ set wildmode=longest:full,full
 " set winminwidth=5
 "
 
+" for git gutter
+set updatetime=100

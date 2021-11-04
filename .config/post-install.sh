@@ -17,12 +17,16 @@ sudo apt-get install\
   curl wget git\
   ripgrep\
   fzf\
+  fd-find\
   zsh\
   unzip\
   gzip\
   nodejs\
   build-essential\
   -yqq
+
+# add symbolic link to fdfind as fd in path
+ln -s $(which fdfind) /local/bin/fd
 
 if [[ -n $NAME ]]
 then
@@ -72,4 +76,5 @@ echo export POSTINSTALL_RUN >> ~/.zshrc
 #  sudo apt-get update && \
 #  sudo apt-get install -y dotnet-sdk-5.0
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
