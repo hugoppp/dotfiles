@@ -77,7 +77,7 @@ ENABLE_CORRECTION="false"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh-agent copydir copyfile zsh-autosuggestions web-search)
+plugins=(git ssh-agent copydir copyfile zsh-autosuggestions web-search fast-syntax-highlighting)
 #plugins+=(zsh-vi-mode)
 
 ZVM_VI_EDITOR=nvim
