@@ -1,8 +1,11 @@
 let mapleader=" "
 
+lua require('impatient')
+lua require('packer_compiled')
+lua require'impatient'.enable_profile()
+let g:did_load_filetypes=1
 
 let $NVIMHOME = $HOME . '/.config/nvim'
-
 "snippets
 source $NVIMHOME/fzf-buffer-delete.vim
 
@@ -13,16 +16,17 @@ luafile $NVIMHOME/lua/lsp-config.lua
 luafile $NVIMHOME/lua/treesitter-config.lua
 luafile $NVIMHOME/lua/lualine-config.lua
 luafile $NVIMHOME/lua/plugins.lua
+luafile $NVIMHOME/lua/telescope-config.lua
 
 source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
-source $NVIMHOME/telescope-config.vim
 
 
 command! G vert Git
 
 colorscheme gruvbox
+
 hi Normal guibg=NONE ctermbg=NONE
  
  " Toggle background transparency

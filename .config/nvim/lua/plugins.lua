@@ -1,9 +1,12 @@
-require('packer').startup(function(use)
+require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
 
+  -- performance
+  use("nathom/filetype.nvim")
+  use 'lewis6991/impatient.nvim'
+
   -- colorschemes
-  use 'morhetz/gruvbox'
-  use 'joshdick/onedark.vim'
+  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
   -- files
   use {
@@ -67,11 +70,16 @@ require('packer').startup(function(use)
   use {
     'glacambre/firenvim',
     run = function() vim.fn['firenvim#install'](0) end
-}
+  }
 
   ---- language specif ----
   -- markdown preview
   use {"ellisonleao/glow.nvim"}
 
-end)
+end,
+config = {
+  -- Move to lua dir so impatient.nvim can cache it
+  compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+}
+})
 

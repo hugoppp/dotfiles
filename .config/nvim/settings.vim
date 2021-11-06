@@ -24,7 +24,7 @@ set rnu
 set nu
 
 "Sync terminal dir with open file
-"set autochdir
+set autochdir
 
 set hidden
 

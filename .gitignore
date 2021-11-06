@@ -11,12 +11,5 @@
 
 !/.config/nvim
 !/.config/nvim/**
-.config/nvim/plugin/
+.config/nvim/lua/packer_compiled.lua
 
-
-
-
-#blacklist
-# .local/
-# .oh-my-zsh/
-# .config/nvim/plugin/packer_compiled.lua
