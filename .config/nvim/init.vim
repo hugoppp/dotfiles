@@ -22,6 +22,9 @@ source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
 
+let g:startify_skiplist = ['AppData/Local/Temp/firenvim/', 'nvim/site/pack/packer']
+set guifont=JetBrainsMono\ NF:h13
+
 
 command! G vert Git
 

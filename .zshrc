@@ -144,3 +144,4 @@ alias Gl="nvim -c \"exec 'Flog' | bd1\""
 
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+alias v=nvim
