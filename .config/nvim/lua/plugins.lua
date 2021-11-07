@@ -64,7 +64,12 @@ require('packer').startup({function(use)
   -- integeration
   use 'tpope/vim-fugitive'
   use 'rbong/vim-flog'
-  use 'airblade/vim-gitgutter'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function() require('gitsigns').setup() end
+  }
 
   -- terminal
   use {"akinsho/toggleterm.nvim"}
