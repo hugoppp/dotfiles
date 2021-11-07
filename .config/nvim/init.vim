@@ -19,6 +19,7 @@ luafile $NVIMHOME/lua/treesitter-config.lua
 luafile $NVIMHOME/lua/lualine-config.lua
 luafile $NVIMHOME/lua/plugins.lua
 luafile $NVIMHOME/lua/telescope-config.lua
+luafile $NVIMHOME/lua/cmp-config.lua
 
 source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
