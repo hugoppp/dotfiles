@@ -28,9 +28,6 @@ require('packer').startup({function(use)
   use 'tpope/vim-repeat'
   use {"Pocco81/AutoSave.nvim"}
 
-  use {'machakann/vim-highlightedyank'}
-  vim.g["highlightedyank_highlight_duration"] = 300
-
   -- window
   -- use {
   --   "luukvbaal/stabilize.nvim",

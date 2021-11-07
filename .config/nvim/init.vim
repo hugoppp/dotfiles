@@ -26,13 +26,17 @@ source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
 
-let g:startify_skiplist = ['AppData/Local/Temp/firenvim/', 'nvim/site/pack/packer']
+colorscheme gruvbox
+
 set guifont=JetBrainsMono\ NF:h13
 
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+augroup END
 
 command! G vert Git
 
-colorscheme gruvbox
 
 hi Normal guibg=NONE ctermbg=NONE
  
