@@ -41,22 +41,25 @@ require('packer').startup({function(use)
 
   -- completion, highlighting
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
   use 'williamboman/nvim-lsp-installer'
+  use 'glepnir/lspsaga.nvim'
 
   use {
-    'neovim/nvim-lspconfig',
-    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/nvim-cmp',
+
+    { 'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'} } ,
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-    'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip'
   }
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
-  use 'wakatime/vim-wakatime'
 
   -- integeration
   use 'tpope/vim-fugitive'
@@ -73,11 +76,12 @@ require('packer').startup({function(use)
     config = function() require'lualine'.setup {} end
   }
 
-  use 'mhinz/vim-startify'
-  vim.g["startify_custom_header"]= "startify#center(startify#fortune#cowsay())"
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.startify'.opts)
+    end
   }
 
   -- browser
@@ -85,6 +89,9 @@ require('packer').startup({function(use)
     'glacambre/firenvim',
     run = function() vim.fn['firenvim#install'](0) end
   }
+
+  -- other
+  use 'wakatime/vim-wakatime'
 
   ---- language specif ----
   -- markdown preview
