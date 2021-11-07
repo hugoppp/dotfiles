@@ -73,7 +73,7 @@ local servers = {
   "bashls",             -- for Bash
   --"rust_analyzer",      -- for Rust
   --"pyright",            -- for Python
-  -- "clangd",             -- for C/C++
+  "clangd",             -- for C/C++
 }
 
 

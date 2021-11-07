@@ -59,7 +59,8 @@ set noswapfile
 
 "complete
 "set complete+=kspell
-set completeopt=menuone,longest
+set completeopt=menu,menuone,noselect
+"longest
 set wildmenu
 set wildmode=longest:full,full
 "set spell spelllang=en_us,de

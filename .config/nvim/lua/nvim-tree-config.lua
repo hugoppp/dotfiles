@@ -2,6 +2,7 @@ vim.g["nvim_tree_quit_on_open"] = 1
 
 -- vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', {expr = true, noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>ff', ':NvimTreeFindFile<CR>', {})
+vim.api.nvim_set_keymap('n', '|', ':NvimTreeFindFile<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>FF', ':NvimTreeToggle<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>fr', 'NvimTreeRefresh<CR>', {})
 

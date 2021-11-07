@@ -3,6 +3,8 @@ let mapleader=" "
 lua require('impatient')
 lua require('packer_compiled')
 lua require'impatient'.enable_profile()
+lua require'telescope'.load_extension('project')
+
 let g:did_load_filetypes=1
 
 let $NVIMHOME = $HOME . '/.config/nvim'
@@ -49,12 +51,20 @@ command Transparency :call BGToggleTransparency()<CR>
 nnoremap <silent><leader>tb :call BGToggleTransparency()<CR>
 
 
+" lsp bindings
 nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
 vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 
 nnoremap <silent><leader>sr <cmd>lua require('lspsaga.rename').rename()<CR>
+
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+
+nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
+nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
+ 
+" show signature help
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 nnoremap <silent> gd :Lspsaga preview_definition<CR>
 
