@@ -81,11 +81,13 @@ require('packer').startup({function(use)
     config = function() require'lualine'.setup {} end
   }
 
-  use {
-    "goolord/alpha-nvim",
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function () require'alpha'.setup(require'startify-config'.opts) end
-  }
+  use 'glepnir/dashboard-nvim'
+  vim.g.dashboard_default_executive ='telescope'
+  -- use {
+  --   "goolord/alpha-nvim",
+  --   requires = { 'kyazdani42/nvim-web-devicons' },
+  --   config = function () require'alpha'.setup(require'alpha.themes.startify'.opts) end
+  -- }
 
   -- browser
   use {
