@@ -38,20 +38,22 @@ augroup END
 command! G vert Git
 
 
+if !exists('g:started_by_firenvim')
 hi Normal guibg=NONE ctermbg=NONE
- 
- " Toggle background transparency
- let t:isTransparent = 0
- function! BGToggleTransparency()
-   if t:isTransparent == 0
-     hi Normal guibg=#111111 ctermbg=black
-     set background=dark
-     let t:isTransparent = 1
-   else
-     hi Normal guibg=NONE ctermbg=NONE
-     let t:isTransparent = 0
-   endif
- endfunction
+endif
+
+" Toggle background transparency
+let t:isTransparent = 0
+function! BGToggleTransparency()
+  if t:isTransparent == 0
+    hi Normal guibg=#111111 ctermbg=black
+    set background=dark
+    let t:isTransparent = 1
+  else
+    hi Normal guibg=NONE ctermbg=NONE
+    let t:isTransparent = 0
+  endif
+endfunction
 
 command Transparency :call BGToggleTransparency()<CR>  
 nnoremap <silent><leader>tb :call BGToggleTransparency()<CR>
@@ -73,4 +75,11 @@ nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_ne
 nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 nnoremap <silent> gd :Lspsaga preview_definition<CR>
+
+
+if exists('g:started_by_firenvim')
+  source $NVIMHOME/firenvim.vim
+else
+  set laststatus=2
+endif
 
