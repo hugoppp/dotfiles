@@ -28,6 +28,9 @@ require('packer').startup({function(use)
   use 'tpope/vim-repeat'
   use {"Pocco81/AutoSave.nvim"}
 
+  -- movements
+  use 'ggandor/lightspeed.nvim'
+
   -- window
   -- use {
   --   "luukvbaal/stabilize.nvim",

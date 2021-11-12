@@ -1,5 +1,11 @@
 let mapleader=" "
 
+if exists('g:started_by_firenvim')
+  source $NVIMHOME/firenvim.vim
+else
+  set laststatus=2
+endif
+
 lua require('impatient')
 lua require('packer_compiled')
 lua require'impatient'.enable_profile()
@@ -75,11 +81,4 @@ nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_ne
 nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 nnoremap <silent> gd :Lspsaga preview_definition<CR>
-
-
-if exists('g:started_by_firenvim')
-  source $NVIMHOME/firenvim.vim
-else
-  set laststatus=2
-endif
 
