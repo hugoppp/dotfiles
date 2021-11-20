@@ -71,7 +71,7 @@ end
 local servers = {
   "sumneko_lua",        -- for Lua
   "bashls",             -- for Bash
-  --"rust_analyzer",      -- for Rust
+  "rust_analyzer",      -- for Rust
   --"pyright",            -- for Python
   "clangd",             -- for C/C++
 }
