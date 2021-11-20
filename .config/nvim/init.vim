@@ -17,6 +17,7 @@ let $NVIMHOME = $HOME . '/.config/nvim'
 "snippets
 source $NVIMHOME/fzf-buffer-delete.vim
 
+luafile $NVIMHOME/lua/gitsigns.lua
 luafile $NVIMHOME/lua/toggleterm-config.lua
 luafile $NVIMHOME/lua/nvim-tree-config.lua
 luafile $NVIMHOME/lua/autosave-config.lua
