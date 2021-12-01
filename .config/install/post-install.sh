@@ -13,6 +13,14 @@ read -rp  "Email: " EMAIL
 read -rp  "Name: " NAME
 
 sudo apt-get update -y && sudo apt-get upgrade -y
+
+# pre dependencies
+sudo apt-get -yqq curl
+
+# add node 16 to apt sources
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+
+# install rest
 sudo apt-get install\
   curl wget git\
   ripgrep\
@@ -24,6 +32,10 @@ sudo apt-get install\
   nodejs\
   build-essential\
   -yqq
+
+
+## build nvim from source
+bash ./install-nvim.sh
 
 # add symbolic link to fdfind as fd in path
 ln -s $(which fdfind) /local/bin/fd

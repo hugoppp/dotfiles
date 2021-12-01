@@ -32,11 +32,6 @@ vnoremap <leader>D "*D
 vnoremap < <gv
 vnoremap > >gv
 
-" TAB in general mode will move to text buffer
-nnoremap <silent> <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <silent> <S-TAB> :bprevious<CR>
-
 
 "scroll 5 lines instead of 1
 nnoremap <C-y> 5<C-y>

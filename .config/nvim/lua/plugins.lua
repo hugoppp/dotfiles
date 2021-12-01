@@ -37,6 +37,7 @@ require('packer').startup({function(use)
   --   config = function() require("stabilize").setup() end
   -- }
 
+  -- automatic resizing focussed window
   use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
   -- completion, highlighting
@@ -50,7 +51,8 @@ require('packer').startup({function(use)
     { 'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'} } ,
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
+    -- v0.6.0: freeze when using !:
+  --   'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip'
   }
@@ -89,18 +91,13 @@ require('packer').startup({function(use)
   --   config = function () require'alpha'.setup(require'alpha.themes.startify'.opts) end
   -- }
 
-  -- browser
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  }
 
   -- other
   use 'wakatime/vim-wakatime'
 
   ---- language specif ----
   -- markdown preview
-  use {"ellisonleao/glow.nvim"}
+  -- use {"ellisonleao/glow.nvim"}
 
 end,
 config = {

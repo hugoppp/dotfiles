@@ -11,5 +11,9 @@
 
 !/.config/nvim
 !/.config/nvim/**
+
+!/.config/install
+!/.config/install/**
+
 .config/nvim/lua/packer_compiled.lua
 

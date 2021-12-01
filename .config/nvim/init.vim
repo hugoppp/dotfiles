@@ -1,23 +1,15 @@
 let mapleader=" "
 
-if exists('g:started_by_firenvim')
-  source $NVIMHOME/firenvim.vim
-else
-  set laststatus=2
-endif
-
 lua require('impatient')
 lua require('packer_compiled')
-lua require'impatient'.enable_profile()
+" lua require'impatient'.enable_profile()
 lua require'telescope'.load_extension('project')
-
-let g:did_load_filetypes=1
 
 let $NVIMHOME = $HOME . '/.config/nvim'
 "snippets
-source $NVIMHOME/fzf-buffer-delete.vim
+" source $NVIMHOME/fzf-buffer-delete.vim
 
-luafile $NVIMHOME/lua/gitsigns.lua
+luafile $NVIMHOME/lua/gitsigns-config.lua
 luafile $NVIMHOME/lua/toggleterm-config.lua
 luafile $NVIMHOME/lua/nvim-tree-config.lua
 luafile $NVIMHOME/lua/autosave-config.lua
@@ -45,9 +37,7 @@ augroup END
 command! G vert Git
 
 
-if !exists('g:started_by_firenvim')
 hi Normal guibg=NONE ctermbg=NONE
-endif
 
 " Toggle background transparency
 let t:isTransparent = 0
