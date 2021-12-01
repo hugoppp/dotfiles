@@ -6,23 +6,28 @@ let g:dashboard_custom_section={
     \ 'command': 'enew'
   \ },
   \ '222': {
-    \ 'description': [' Git directory               ~/repos'],
-    \ 'command': 'e $HOME/repos'
+    \ 'description': [' Repos directory             ~/repos'],
+    \ 'command': 'e $HOME/repos/'
   \ },
   \ '223': {
     \ 'description': [' Home directory                    ~'],
     \ 'command': 'e $HOME'
   \ },
   \ '224': {
-    \ 'description': [' C drive                     /mnt/c/'],
-    \ 'command': 'e mnt/c/'
+    \ 'description': [' C drive                      /mnt/c'],
+    \ 'command': 'e /mnt/c/'
   \ },
   \ '333': {
+    \ 'description': [' Config               ~/.config/nvim'],
+    \ 'command': 'e $HOME/.config/nvim/'
+  \ },
+  \ '444': {
     \ 'description': [' Projects                 <leader>gp'],
     \ 'command': 'Telescope project'
   \ },
 \}
 ]])
+
 
 vim.g.dashboard_custom_header=
 {
