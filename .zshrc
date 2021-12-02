@@ -134,12 +134,27 @@ setopt nocorrectall
 setopt nocorrect
 
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
+## My aliases and functions
+
+### Use fugitive for git from terminal
 # alias G='(){ nvim -c ":G$1 | bd1" ;}'
 alias G='nvim -c ":Git | bd1"'
 alias Gl="nvim -c \"exec 'Flog' | bd1\""
 
-
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-
-alias V='nvim .'
 alias v=nvim
+alias vim=nvim
+
+### quickly cd to WSL C drive
+function c {
+  cd c
+}
+
+function cd {
+  if [ "$1" = "c" ]; then
+    builtin cd /mnt/c
+  else
+    builtin cd "$@"
+  fi
+}
