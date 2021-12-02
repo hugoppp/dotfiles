@@ -34,34 +34,39 @@ require('packer').startup({function(use)
   -- automatic resizing focussed window
   use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
-  -- completion, highlighting
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'glepnir/lspsaga.nvim'
+  -- highlighting
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
-  use "rafamadriz/friendly-snippets"
+  -- lsp
+  use {
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
+    'glepnir/lspsaga.nvim',
+  }
 
+  -- completion
   use {
     'hrsh7th/nvim-cmp',
 
     { 'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'} } ,
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
-    -- v0.6.0: freeze when using !:
-    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-cmdline', -- v0.6.0: freeze when using !:
     'saadparwaiz1/cmp_luasnip',
-
   }
 
+  -- snippets
+  use "rafamadriz/friendly-snippets"
   use {
     'L3MON4D3/LuaSnip',
-    after = 'friendly-snippets',
-    config = function () require("luasnip/loaders/from_vscode").lazy_load() end
-  }
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    -- after = 'friendly-snippets',
+    config = function ()
+      require("luasnip/loaders/from_vscode").lazy_load()
+      require'luasnip'.filetype_extend("vue", {"html"})
+    end
   }
 
 

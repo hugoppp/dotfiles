@@ -9,7 +9,6 @@ let $NVIMHOME = $HOME . '/.config/nvim'
 "snippets
 " source $NVIMHOME/fzf-buffer-delete.vim
 
-lua require'luasnip'.filetype_extend("vue", {"html"})
 " doesn't work ??
 :au SpellFileMissing * call Download_spell_file(expand('<amatch>'))
 
