@@ -9,6 +9,10 @@ let $NVIMHOME = $HOME . '/.config/nvim'
 "snippets
 " source $NVIMHOME/fzf-buffer-delete.vim
 
+lua require'luasnip'.filetype_extend("vue", {"html"})
+" doesn't work ??
+:au SpellFileMissing * call Download_spell_file(expand('<amatch>'))
+
 luafile $NVIMHOME/lua/gitsigns-config.lua
 luafile $NVIMHOME/lua/toggleterm-config.lua
 luafile $NVIMHOME/lua/nvim-tree-config.lua
@@ -24,6 +28,7 @@ luafile $NVIMHOME/lua/dashboard-config.lua
 source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
+
 
 colorscheme gruvbox
 

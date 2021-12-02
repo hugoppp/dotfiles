@@ -46,14 +46,14 @@ set nowritebackup
 set noswapfile
 
 "complete
-"set complete+=kspell
+set complete+=kspell
 set completeopt=menu,menuone,noselect
 "longest
 set wildmenu
 set wildmode=longest:full,full
-" set spell spelllang=en_us,de
+set spelllang=en_us,de
 "shor
 
 " for git gutter
-set updatetime=100
+"set updatetime=100
 

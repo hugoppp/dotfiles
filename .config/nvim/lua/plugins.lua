@@ -31,12 +31,6 @@ require('packer').startup({function(use)
   -- movements
   use 'ggandor/lightspeed.nvim'
 
-  -- window
-  -- use {
-  --   "luukvbaal/stabilize.nvim",
-  --   config = function() require("stabilize").setup() end
-  -- }
-
   -- automatic resizing focussed window
   use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
@@ -45,6 +39,8 @@ require('packer').startup({function(use)
   use 'williamboman/nvim-lsp-installer'
   use 'glepnir/lspsaga.nvim'
 
+  use "rafamadriz/friendly-snippets"
+
   use {
     'hrsh7th/nvim-cmp',
 
@@ -52,9 +48,15 @@ require('packer').startup({function(use)
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     -- v0.6.0: freeze when using !:
-  --   'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip'
+    'hrsh7th/cmp-cmdline',
+    'saadparwaiz1/cmp_luasnip',
+
+  }
+
+  use {
+    'L3MON4D3/LuaSnip',
+    after = 'friendly-snippets',
+    config = function () require("luasnip/loaders/from_vscode").lazy_load() end
   }
 
   use {
@@ -85,19 +87,9 @@ require('packer').startup({function(use)
 
   use 'glepnir/dashboard-nvim'
   vim.g.dashboard_default_executive ='telescope'
-  -- use {
-  --   "goolord/alpha-nvim",
-  --   requires = { 'kyazdani42/nvim-web-devicons' },
-  --   config = function () require'alpha'.setup(require'alpha.themes.startify'.opts) end
-  -- }
-
 
   -- other
   use 'wakatime/vim-wakatime'
-
-  ---- language specif ----
-  -- markdown preview
-  -- use {"ellisonleao/glow.nvim"}
 
 end,
 config = {
