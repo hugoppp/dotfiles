@@ -15,8 +15,7 @@ read -rp  "Name: " NAME
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 # pre dependencies
-sudo apt-get -yqq curl
-
+sudo apt-get install -yqq curl
 # add node 16 to apt sources
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
@@ -69,13 +68,13 @@ chsh -s $(which zsh)
 
 # -- zsh plugins --
 # zsh-vi-mode
-git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/plugins/zsh-vi-mode
+git clone -depth=1 https://github.com/jeffreytse/zsh-vi-mode $ZSH/plugins/zsh-vi-mode
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # zsh autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone -depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # syntax highlight
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+git clone -depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 
 export POSTINSTALL_RUN 
 echo export POSTINSTALL_RUN >> ~/.zshrc
