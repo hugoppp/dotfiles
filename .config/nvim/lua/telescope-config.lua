@@ -4,10 +4,19 @@ local telescope = require('telescope')
 -- go
 vim.api.nvim_set_keymap('n', 'ga',
   '<CMD>lua require\'telescope\'.custom.project_files()<CR>', options)
+
+vim.api.nvim_set_keymap('n', 'gA',
+  '<CMD>lua require\'telescope.builtin\'.find_files()<CR>', options)
+
 vim.api.nvim_set_keymap('n', 'gr',
   '<CMD>lua require\'telescope.builtin\'.oldfiles()<CR>', options)
-vim.api.nvim_set_keymap('n', 'gb',
-  '<CMD>lua require\'telescope.builtin\'.buffers()<CR>', options)
+
+vim.api.nvim_set_keymap('n', '<leader>:',
+  '<CMD>lua require\'telescope.builtin\'.commands()<CR>', options)
+
+-- vim.api.nvim_set_keymap('n', 'gb',
+--   '<CMD>lua require\'telescope.builtin\'.buffers()<CR>', options)
+--
 vim.api.nvim_set_keymap('n', 'g?',
   '<CMD>lua require\'telescope.builtin\'.builtin()<CR>', options)
 
@@ -52,3 +61,4 @@ telescope.custom = {
 
 }
 
+require'telescope'.load_extension('project')

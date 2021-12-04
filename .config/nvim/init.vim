@@ -3,32 +3,15 @@ let mapleader=" "
 lua require('impatient')
 lua require('packer_compiled')
 " lua require'impatient'.enable_profile()
-lua require'telescope'.load_extension('project')
-
-let $NVIMHOME = $HOME . '/.config/nvim'
-"snippets
-" source $NVIMHOME/fzf-buffer-delete.vim
 
 " doesn't work ??
 :au SpellFileMissing * call Download_spell_file(expand('<amatch>'))
 
-luafile $NVIMHOME/lua/gitsigns-config.lua
-luafile $NVIMHOME/lua/toggleterm-config.lua
-luafile $NVIMHOME/lua/nvim-tree-config.lua
-luafile $NVIMHOME/lua/autosave-config.lua
-luafile $NVIMHOME/lua/lsp-config.lua
-luafile $NVIMHOME/lua/treesitter-config.lua
-luafile $NVIMHOME/lua/lualine-config.lua
+let $NVIMHOME = $HOME . '/.config/nvim'
 luafile $NVIMHOME/lua/plugins.lua
-luafile $NVIMHOME/lua/telescope-config.lua
-luafile $NVIMHOME/lua/cmp-config.lua
-luafile $NVIMHOME/lua/dashboard-config.lua
-
 source $NVIMHOME/settings.vim
 source $NVIMHOME/keys.vim
 source $NVIMHOME/keys-idea.vim
-
-" lua require'navigator'.setup { lsp_installer = true }
 
 set guifont=JetBrainsMono\ NF:h13
 
@@ -38,7 +21,6 @@ augroup highlight_yank
 augroup END
 
 command! G vert Git
-
 
 hi Normal guibg=NONE ctermbg=NONE
 

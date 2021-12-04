@@ -14,11 +14,12 @@ require('packer').startup({function(use)
   -- files
   use { 'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
+    config = function() require'nvim-tree-config' end
   }
 
   use { 'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function() require 'telescope-config' end
   }
 
   use 'nvim-telescope/telescope-project.nvim'
@@ -27,7 +28,10 @@ require('packer').startup({function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
-  use {"Pocco81/AutoSave.nvim"}
+  use {
+    "Pocco81/AutoSave.nvim",
+    config = function() require'autosave-config' end
+  }
 
   -- movements
   use 'ggandor/lightspeed.nvim'
@@ -39,13 +43,15 @@ require('packer').startup({function(use)
 
   -- highlighting
   use { 'nvim-treesitter/nvim-treesitter',
+    config = function() require'treesitter-config' end,
     run = ':TSUpdate'
   }
 
   -- lsp
-  use {
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
+  use { 'neovim/nvim-lspconfig', }
+  use { 'williamboman/nvim-lsp-installer',
+    config = function() require'lsp-installer-config' end,
+    requires = 'nvim-lspconfig'
   }
 
   use { 'ray-x/navigator.lua',
@@ -59,7 +65,7 @@ require('packer').startup({function(use)
           -- vim.cmd([[hi default GHListHl guifg=#e0d8f4 guibg=#404254]]),
           lsp_installer = true,
           keymaps = {
-            {key = "GR", func = "require('navigator.reference').reference()"},
+            {key = "gR", func = "require('navigator.reference').reference()"},
             {key = "]e", func = "diagnostic.goto_next({ border = 'rounded', max_width = 80})"},
             {key = "[e", func = "diagnostic.goto_prev({ border = 'rounded', max_width = 80})"},
           },
@@ -69,7 +75,7 @@ require('packer').startup({function(use)
 
   -- completion
   use {
-    'hrsh7th/nvim-cmp',
+    {'hrsh7th/nvim-cmp', config = function() require'cmp-config' end },
 
     { 'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'} } ,
     'hrsh7th/cmp-buffer',
@@ -97,20 +103,25 @@ require('packer').startup({function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
+    config = function() require('gitsigns-config') end
   }
 
   -- terminal
-  use {"akinsho/toggleterm.nvim"}
+  use { "akinsho/toggleterm.nvim",
+    config = function() require'toggleterm-config' end
+  }
 
   -- looks
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    config = function() require'lualine'.setup {} end
+    config = function() require'lualine-config' end
   }
 
-  use 'glepnir/dashboard-nvim'
+  use {'glepnir/dashboard-nvim',
+    config = function() require 'dashboard-config' end
+  }
+
   vim.g.dashboard_default_executive ='telescope'
 
   -- other
