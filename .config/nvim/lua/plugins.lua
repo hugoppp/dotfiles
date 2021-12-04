@@ -32,6 +32,9 @@ require('packer').startup({function(use)
     "Pocco81/AutoSave.nvim",
     config = function() require'autosave-config' end
   }
+  use { 'norcalli/nvim-colorizer.lua',
+    config = function() require'colorizer'.setup() end
+  }
 
   -- movements
   use 'ggandor/lightspeed.nvim'

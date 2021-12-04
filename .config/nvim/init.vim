@@ -1,5 +1,7 @@
 let mapleader=" "
 
+set termguicolors
+
 lua require('impatient')
 lua require('packer_compiled')
 " lua require'impatient'.enable_profile()
