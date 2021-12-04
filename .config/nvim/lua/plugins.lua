@@ -57,6 +57,8 @@ require('packer').startup({function(use)
     requires = 'nvim-lspconfig'
   }
 
+  use {'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
+
   use { 'ray-x/navigator.lua',
     requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'},
     after = 'nvim-lspconfig',
