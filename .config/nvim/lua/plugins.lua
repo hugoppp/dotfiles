@@ -28,6 +28,7 @@ require('packer').startup({function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
+  use 'tpope/vim-sleuth'
   use {
     "Pocco81/AutoSave.nvim",
     config = function() require'autosave-config' end
@@ -88,6 +89,8 @@ require('packer').startup({function(use)
     'hrsh7th/cmp-cmdline', -- v0.6.0: freeze when using !:
     'saadparwaiz1/cmp_luasnip',
   }
+
+  use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup{} end}
 
   -- snippets
   use "rafamadriz/friendly-snippets"
