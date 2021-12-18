@@ -1,0 +1,5 @@
+return
+{
+  transparency = 30,
+}
+

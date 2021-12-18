@@ -58,7 +58,7 @@ require('packer').startup({function(use)
     requires = 'nvim-lspconfig'
   }
 
-  use {'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
+  use {'ray-x/lsp_signature.nvim', config = function() require "lsp-signature-config" end }
 
   use { 'ray-x/navigator.lua',
     requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'},
@@ -70,6 +70,8 @@ require('packer').startup({function(use)
           -- vim.cmd([[hi default GHListDark guifg=#e0d8f4 guibg=#103234]]),
           -- vim.cmd([[hi default GHListHl guifg=#e0d8f4 guibg=#404254]]),
           lsp_installer = true,
+          border = 'none',
+          transparency = require'globals'.transparency,
           keymaps = {
             {key = "gR", func = "require('navigator.reference').reference()"},
             {key = "]e", func = "diagnostic.goto_next({ border = 'rounded', max_width = 80})"},

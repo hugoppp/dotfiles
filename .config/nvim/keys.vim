@@ -19,3 +19,6 @@ nnoremap <silent><C-A-k>      :resize -5<CR>
 nnoremap <silent><C-A-j>      :resize +5<CR>
 nnoremap <silent><C-A-h>      :vertical resize -5<CR>
 nnoremap <silent><C-A-l>      :vertical resize +5<CR>
+
+"lsp
+nnoremap <silent>gq :lua vim.lsp.buf.signature_help()<CR>
